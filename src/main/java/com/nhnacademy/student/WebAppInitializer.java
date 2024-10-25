@@ -4,19 +4,24 @@ import jakarta.servlet.ServletContainerInitializer;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.HandlesTypes;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.Set;
 
-@HandlesTypes(value = {
-        jakarta.servlet.http.HttpServlet.class,
-        jakarta.servlet.Filter.class,
-        jakarta.servlet.ServletContextListener.class,
-        jakarta.servlet.http.HttpSessionListener.class
-})
-public class WebAppInitializer  implements ServletContainerInitializer {
+@Slf4j
+@HandlesTypes(
+        value = {
+                com.nhnacademy.student.Controller.Command.class
+        }
+)
+public class WebAppInitializer implements ServletContainerInitializer {
     @Override
-    public void onStartup(Set<Class<?>> set, ServletContext servletContext) throws ServletException {
-        servletContext.setInitParameter("url","https://nhnacademy.com");
-        servletContext.setInitParameter("counterFileName","counter.dat");
+    public void onStartup(Set<Class<?>> c, ServletContext ctx) throws ServletException {
+
+        ControllerFactory controllerFactory = new ControllerFactory();
+        controllerFactory.init(c);
+        ctx.setAttribute("controllerFactory", controllerFactory);
+
     }
+
 }

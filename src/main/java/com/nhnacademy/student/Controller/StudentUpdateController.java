@@ -1,4 +1,4 @@
-package com.nhnacademy.student.servlet;
+package com.nhnacademy.student.Controller;
 
 import com.nhnacademy.student.domain.Gender;
 import com.nhnacademy.student.domain.Student;
@@ -6,6 +6,7 @@ import com.nhnacademy.student.repository.StudentRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+@RequestMapping(value = "/student/update.do", method = RequestMapping.Method.POST)
 public class StudentUpdateController implements Command {
 
     @Override

@@ -1,4 +1,4 @@
-package com.nhnacademy.student.servlet;
+package com.nhnacademy.student.Controller;
 
 import com.nhnacademy.student.domain.Gender;
 import com.nhnacademy.student.domain.Student;
@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.Objects;
 
 @Slf4j
+@RequestMapping(value = "/student/register.do", method = RequestMapping.Method.POST)
 public class StudentRegisterController implements Command {
 
   @Override

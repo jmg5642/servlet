@@ -1,4 +1,4 @@
-package com.nhnacademy.student.servlet;
+package com.nhnacademy.student.Controller;
 
 import java.io.*;
 

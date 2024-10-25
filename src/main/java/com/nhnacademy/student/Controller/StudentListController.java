@@ -1,4 +1,4 @@
-package com.nhnacademy.student.servlet;
+package com.nhnacademy.student.Controller;
 
 import com.nhnacademy.student.domain.Student;
 import com.nhnacademy.student.repository.StudentRepository;
@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.List;
 
 @Slf4j
+@RequestMapping(value = "/student/list.do", method = RequestMapping.Method.GET)
 public class StudentListController implements Command {
 
     @Override

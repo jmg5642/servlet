@@ -1,9 +1,10 @@
-package com.nhnacademy.student.servlet;
+package com.nhnacademy.student.Controller;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+@RequestMapping(value = "/student/error.do", method = RequestMapping.Method.GET)
 public class ErrorController implements Command {
 
     @Override
