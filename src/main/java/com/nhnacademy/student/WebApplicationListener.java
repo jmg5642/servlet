@@ -3,7 +3,7 @@ package com.nhnacademy.student;
 import com.github.javafaker.Faker;
 import com.nhnacademy.student.domain.Gender;
 import com.nhnacademy.student.domain.Student;
-import com.nhnacademy.student.repository.MapStudentRepository;
+import com.nhnacademy.student.repository.JsonStudentRepository;
 import com.nhnacademy.student.repository.StudentRepository;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletContextEvent;
@@ -20,7 +20,7 @@ public class WebApplicationListener  implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         ServletContext context = sce.getServletContext();
-        StudentRepository studentRepository = new MapStudentRepository();
+        StudentRepository studentRepository = new JsonStudentRepository();
 
         for(int i=1; i<=10; i++){
             // ... student 1 ~ 10 생성하기
